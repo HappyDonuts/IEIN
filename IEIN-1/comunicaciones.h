@@ -8,6 +8,7 @@
 #ifndef COMUNICACIONES_H_
 #define COMUNICACIONES_H_
 
+int recPacket(char msg[]);
 
 
 #endif /* COMUNICACIONES_H_ */
