@@ -22,7 +22,7 @@
 
 
 typedef enum fsm_state {
-	//TODO	Posibles estados de la máquina de estados del dron
+	//TODO	Posibles estados de la mï¿½quina de estados del dron
 	STOPPED,
 	RISING,
 	STABLE,
@@ -35,6 +35,7 @@ typedef struct dron_fsm_{
 	int started_flag;		//Flags necesarios y altura actual
 	int stopping_flag;
 	int current_height;
+	int modifier_height;
 	msg_list_t* msg_list;	//Lista de mensajes
 }dron_fsm_t;
 
@@ -42,7 +43,7 @@ dron_fsm_t* new_dron_fsm(fsm_trans_t* dron_transition_table);
 int delete_dron_fsm(dron_fsm_t* dron_fsm);
 
 int read_msg(dron_fsm_t* dron_fsm);				//LEO el fichero y almaceno en la cola de mensages todos los mensajes del fichero
-int parse_and_update(dron_fsm_t* dron_fsm);		//Leo UN mensaje de la lista, lo traduzco y actualizo los flags según corresponda
-
+int parse_and_update(dron_fsm_t* dron_fsm);		//Leo UN mensaje de la lista, lo traduzco y actualizo los flags segï¿½n corresponda
+void imprimeEstado(fsm_t* fsm);
 
 #endif /* DRON_CONTROL_H_ */

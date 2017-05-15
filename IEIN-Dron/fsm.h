@@ -58,7 +58,7 @@ struct fsm_ {
   fsm_trans_t* tt;
 };
 
-fsm_t* fsm_new (fsm_trans_t* tt);
+fsm_t* fsm_new ( int state, fsm_trans_t* tt);
 int fsm_delete(fsm_t* fsm);
 
 void fsm_fire (fsm_t* fsm);
